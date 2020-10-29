@@ -56,6 +56,19 @@ title: How to use ARM template to intergrate vNet into an App Service
 }
 ```
 
+#### vNet delegation section from above code
+
+```JSON
+"delegations": [
+    {
+        "name": "Microsoft.Web.serverFarms",
+        "properties": {
+            "serviceName": "Microsoft.Web/serverFarms"
+        }
+    }
+]
+```
+
 ### Function App Definition
 
 ```JSON
