@@ -1,3 +1,7 @@
-theme: jekyll-theme-minimal
+# basic options
 title: Welcome to Jun's blog!
 description: This is where you can find crumbs of Jun's technical adventure. 
+
+# Build settings
+markdown: kramdown
+theme: minima
