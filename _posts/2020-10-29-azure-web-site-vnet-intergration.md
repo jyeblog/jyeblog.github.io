@@ -5,7 +5,7 @@ title: How to use ARM template to intergrate vNet into an App Service
 
 ## Variables
 
-```json
+```JSON
 "subnetId": "[resourceId('Microsoft.Network/virtualNetworks/subnets',variables('virtualNetworkName'),parameters('subnetName'))]"
 ```
 
@@ -13,7 +13,7 @@ title: How to use ARM template to intergrate vNet into an App Service
 
 ### vNet definition
 
-```json
+```JSON
 {
     "name": "[variables('virtualNetworkName')]",
     "type": "Microsoft.Network/VirtualNetworks",
@@ -58,7 +58,7 @@ title: How to use ARM template to intergrate vNet into an App Service
 
 ### Function App Definition
 
-```json
+```JSON
 {
     "apiVersion": "2018-11-01",
     "name": "[variables('functionappName')]",
@@ -99,7 +99,7 @@ title: How to use ARM template to intergrate vNet into an App Service
 
 ### vNet intergration
 
-```json
+```JSON
 
 {
     "type": "Microsoft.Web/sites/config",
