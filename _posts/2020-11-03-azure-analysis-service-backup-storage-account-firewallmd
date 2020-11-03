@@ -1,0 +1,16 @@
+---
+layout: post
+title: Enable Azure Analysis Service backup to Azure Storage Account with Firewall turned on 
+---
+
+Since Azure Analysis Service is a PaaS Service, trying to enable Azure Analysis Service backup to a storage account in the same region, seems to require firewall exclusions from Azure Analysis Service IP addresses.
+
+These IP addresses are not published in [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/en-us/download/details.aspx?id=56519)
+
+Further testing shows, even add the entire region subnet to the storage account firewall exception, it still doesn't work.
+
+After enabled Storage Account Logging, it's apparently the following IP was blocked access to the storage account: 100.64.0.0/10
+
+This range appears to be within Azure internal network.
+
+After adding this range to the Storage Account firewall exclusion, the backup can be enabled successfully.
