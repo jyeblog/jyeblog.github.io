@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Useful link - Azure Architecture Center - 
+title: Useful link - Azure Solution Architect 
 ---
 
 ## Reference architectures - Do not recreate the wheel

@@ -1,3 +1,12 @@
-## Welcome to Jun's Blog site
+---
+layout: page
+title: Index for my blog posts
+---
 
-This is where you can find crumbs of my technical journey, hope you like it!
+## Azure
+
+### Solution Architect Resources
+
+[Useful link](__posts/2020-11-02-useful-links-azure-solution-architect.md)
+
+### App Service
