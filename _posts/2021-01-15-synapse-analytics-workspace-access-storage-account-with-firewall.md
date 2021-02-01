@@ -87,4 +87,15 @@ Microsoft suggested when Synapse Workspace gets created with Managed Network, it
     Error : com.microsoft.spark.sqlanalytics.exception.SQLAnalyticsConnectorException: com.microsoft.sqlserver.jdbc.SQLServerException: CREATE EXTERNAL TABLE AS SELECT statement failed as the path name 'abfss://users@testsynapsews.dfs.core.windows.net/synapse/workspaces/test-synapse-ws/sparkpools/Spark1/sparkpoolinstances/b8a2a560-82f2-4e88-8cae-8e715a2a9a5e/livysessions/2021/01/15/0/tempdata/SQLAnalyticsConnectorStaging/application_1610724646380_0001/ae61C6NuJNAcbbda6d98d854195995c206dd7371314.tbl' could not be used for export. Please ensure that the specified path is a directory which exists or can be created, and that files can be created in that directory.
     ```
 
-![Error2](images/2021-01-15-11-19-27.png)
+    ![Error2](images/2021-01-15-11-19-27.png)
+
+14. Removed private endpoint and disabled Storage account firewall. rerun Spark notebook, and it works fine:
+
+    ```SPARK
+    %%spark
+    spark.sql("CREATE DATABASE IF NOT EXISTS nyctaxi")
+    val df = spark.read.sqlanalytics("SQLPOOL1.dbo.Trip") 
+    df.write.mode("overwrite").saveAsTable("nyctaxi.trip")
+    ```
+
+    ![Success](images/2021-02-01-11-22-36.png)
