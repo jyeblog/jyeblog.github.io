@@ -13,4 +13,4 @@ title: Index for my blog posts
 
 ### Others
 
-[IQ Test](_posts/iq-test.md)
+[IQ Test]({% link _posts/iq-test.md %})
